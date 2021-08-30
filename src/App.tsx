@@ -8,7 +8,7 @@ import {UncontrolledRating} from './UncontrolledRating/UncontrolledRating';
 
 function App() {
     return (
-        <div>
+        <div className={"main"}>
             <OnOff />
             <OnOff />
             <UncontrolledAccordion titleValue={"Menu"} />

@@ -9,51 +9,27 @@ export function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
     let [valueSelected, setStar] = useState(3);
 
+    const boldStar = (_id: number) => {
+        setStar(_id)
+    }
+
     return (
         <div>
-            <Star selected={valueSelected > 0}/>
-            <button onClick={() => {
-                setStar(1)
-            }}>1
-            </button>
-            <Star selected={valueSelected > 1}/>
-            <button onClick={() => {
-                setStar(2)
-            }}>2
-            </button>
-            <Star selected={valueSelected > 2}/>
-            <button onClick={() => {
-                setStar(3)
-            }}>3
-            </button>
-            <Star selected={valueSelected > 3}/>
-            <button onClick={() => {
-                setStar(4)
-            }}>4
-            </button>
-            <Star selected={valueSelected > 4}/>
-            <button onClick={() => {
-                setStar(5)
-            }}>5
-            </button>
+            <Star selected={valueSelected > 0} id={1} boldStar={boldStar}/>
+            <Star selected={valueSelected > 1} id={2} boldStar={boldStar}/>
+            <Star selected={valueSelected > 2} id={3} boldStar={boldStar}/>
+            <Star selected={valueSelected > 3} id={4} boldStar={boldStar}/>
+            <Star selected={valueSelected > 4} id={5} boldStar={boldStar}/>
         </div>
     );
 }
 
 type StarPropsType = {
     selected: boolean
+    id: number
+    boldStar: (_id: number) => void
 }
 
 function Star(props: StarPropsType) {
-
-    if (props.selected === true) {
-        return (
-            <span><b>star </b></span>
-        );
-    } else {
-        return (
-            <span>star </span>
-        );
-    }
-
+    return props.selected ? <span key={props.id} onClick={ () => props.boldStar(props.id)}><b>star </b></span> : <span key={props.id} onClick={ () => props.boldStar(props.id)}>star </span>
 }
