@@ -13,7 +13,7 @@ function App() {
 
     let [collapsed, setCollapsed] = useState<boolean>(false)
 
-    let[on, setOn] = useState(false);
+    let[on, setOn] = useState<boolean>(false);
 
     const onSet = {
         width: "30px",
