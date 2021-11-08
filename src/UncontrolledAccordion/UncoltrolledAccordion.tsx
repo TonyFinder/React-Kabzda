@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-type UncontrolledAccordionProps = {
+export type UncontrolledAccordionProps = {
     titleValue: string
     //collapsed: boolean
 }

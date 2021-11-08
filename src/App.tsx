@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './Rating/Rating';
-import OnOff from './OnOff/OnOff';
 import {UncontrolledAccordion} from './UncontrolledAccordion/UncoltrolledAccordion';
 import {UncontrolledRating} from './UncontrolledRating/UncontrolledRating';
 import {Accordion} from './Accordion/Accordion';
 import UncontrolledOnOff from './UncontrolledOnOff/UncontrolledOnOff';
+import {OnOff} from './OnOff/OnOff';
 
 function App() {
 
