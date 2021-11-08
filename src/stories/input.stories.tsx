@@ -34,3 +34,31 @@ export const InputGetValueByButtonPress = () => {
         </>
     )
 }
+
+export const InputControlled = () => {
+    const [parentValue, setParentValue] = useState("")
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.value)
+
+    return <input value={parentValue} onChange={onChangeHandler}/>
+}
+
+export const CheckboxControlled = () => {
+    const [parentValue, setParentValue] = useState(false)
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.checked)
+
+    return <input type={"checkbox"} checked={parentValue} onChange={onChangeHandler}/>
+}
+
+export const SelectControlled = () => {
+    const [parentValue, setParentValue] = useState<string|undefined>(undefined)
+    const onSelectHandler = (e: ChangeEvent<HTMLSelectElement>) => setParentValue(e.currentTarget.value)
+
+    return (
+        <select value={parentValue} onChange={onSelectHandler}>
+            <option>none</option>
+            <option value={"1"}>Canada</option>
+            <option value={"2"}>USA</option>
+            <option value={"3"}>Russia</option>
+        </select>
+    )
+}
