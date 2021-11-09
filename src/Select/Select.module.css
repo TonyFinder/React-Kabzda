@@ -1,0 +1,38 @@
+.main {
+    font-size: 18px;
+    font-weight: bold;
+    color: darkblue;
+}
+.selected {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background-color: lightgrey;
+    padding: 5px;
+}
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    background-color: lightsteelblue;
+    padding: 5px;
+}
+.option:hover {
+    background-color: #1ea7fd;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+}
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: url("https://img.icons8.com/external-those-icons-lineal-color-those-icons/20/000000/external-arrow-arrows-those-icons-lineal-color-those-icons-12.png") no-repeat;
+}

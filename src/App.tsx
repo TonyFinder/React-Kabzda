@@ -46,7 +46,7 @@ function App() {
         <div className={"main"}>
             <OnOff onSet={onSet} offSet={offSet} indicator={indicator} setOn={setOn}/>
             <UncontrolledOnOff />
-            <Accordion titleValue="Students" collapsed={collapsed} setCollapsed={setCollapsed}/>
+            <Accordion titleValue="Students" collapsed={collapsed} setCollapsed={setCollapsed} items={[{name: "Anton", value: 1}, {name: "Anna", value: 2}, {name: "Igor", value: 3}, {name: "Vladimir", value: 4}, {name: "Alex", value: 5}]} callback={(value)=> alert(`Value ${value} was clicked`)}/>
             <UncontrolledAccordion titleValue={"Menu"} />
             <Rating value={valueStar} setValueStar={setValueStar}/>
             <UncontrolledRating />
