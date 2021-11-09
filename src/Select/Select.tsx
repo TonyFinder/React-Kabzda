@@ -18,12 +18,17 @@ export const Select = (props: SelectPropsType) => {
 
     return (
         <div className={s.main}>
-            {props.showSelect && <div className={s.selected} onClick={props.callbackOnclickSelect}>
+            {props.showSelect &&
+            <div className={s.selected} onClick={props.callbackOnclickSelect}>
                 <div>{props.selectValue}</div>
                 <div className={s.arrow}></div>
             </div>}
-            {!props.showSelect && <div className={s.options}>
-                {props.items.map((i, index) => <div onClick={() => props.callback(i.title)} key={index} className={s.option}>{i.title}</div>)}
+            {!props.showSelect &&
+            <div className={s.options}>{props.items.map((i, index) =>
+                    <div onClick={() => props.callback(i.title)}
+                         key={index}
+                         className={s.option}>{i.title}
+                    </div>)}
             </div>}
         </div>
     )

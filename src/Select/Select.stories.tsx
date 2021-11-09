@@ -16,6 +16,14 @@ export const ModeFunction = () => {
     const callbackShowSelectChanger = () => setShowSelect(!showSelect)
 
     return (
-        <Select selectValue={selectValue} items={[{title: "Canada", value: 1}, {title: "USA", value: 2}, {title: "Poland", value: 3}, {title: "Russia", value: 4}]} callback={callbackChangeValue} showSelect={showSelect} callbackOnclickSelect={callbackShowSelectChanger}/>
+        <Select selectValue={selectValue}
+                items={[
+                    {title: "Canada", value: 1},
+                    {title: "USA", value: 2},
+                    {title: "Poland", value: 3},
+                    {title: "Russia", value: 4}]}
+                callback={callbackChangeValue}
+                showSelect={showSelect}
+                callbackOnclickSelect={callbackShowSelectChanger}/>
     )
 }
