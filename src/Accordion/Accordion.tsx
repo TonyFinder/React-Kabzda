@@ -13,7 +13,9 @@ export type AccordionPropsType = {
     callback: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+export const Accordion = React.memo(AccordionMain)
+
+function AccordionMain(props: AccordionPropsType) {
     return (
             <div>
                 <AccordionTitle title={props.titleValue} onClick={ () => props.setCollapsed(!props.collapsed)}/>
@@ -27,7 +29,9 @@ export type AccordionTitlePropsType = {
     onClick: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+const AccordionTitle = React.memo(AccordionTitleMain)
+
+function AccordionTitleMain(props: AccordionTitlePropsType) {
     return <h3 onClick={props.onClick}>{props.title}</h3>
 }
 
@@ -36,7 +40,9 @@ export type AccordionBodyPropsType = {
     callback: (value: any) => void
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionBody = React.memo(AccordionBodyMain)
+
+function AccordionBodyMain(props: AccordionBodyPropsType) {
     return (
         <ul>
             {props.items.map( (i, index) => <li onClick={() => props.callback(i.value)} key={index}>{i.name}</li>)}

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type OnOffPropsType = {
     onSet: any
     offSet: any
@@ -5,9 +7,9 @@ export type OnOffPropsType = {
     setOn: (s: boolean) => void
 }
 
-export function OnOff(props: OnOffPropsType) {
+export const OnOff = React.memo(OnOffMain)
 
-
+function OnOffMain(props: OnOffPropsType) {
 
     return <div>
         <div style={props.onSet} onClick={() => {props.setOn(true)}}>On</div>

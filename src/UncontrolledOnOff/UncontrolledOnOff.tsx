@@ -1,10 +1,12 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 type OnOffPropsType = {
     //on: boolean
 }
 
-function OnOff(props: OnOffPropsType) {
+const OnOff = React.memo(OnOffMain)
+
+function OnOffMain(props: OnOffPropsType) {
 
     let[on, setOn] = useState(false);
 

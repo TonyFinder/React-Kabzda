@@ -14,7 +14,7 @@ export type SelectPropsType = {
     callbackOnclickSelect: () => void
 }
 
-export const Select = (props: SelectPropsType) => {
+const SelectMain = (props: SelectPropsType) => {
 
     return (
         <div className={s.main}>
@@ -33,3 +33,5 @@ export const Select = (props: SelectPropsType) => {
         </div>
     )
 }
+
+export const Select = React.memo(SelectMain)

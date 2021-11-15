@@ -4,8 +4,9 @@ type UncontrolledRatingPropsType = {
     //value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
+export const UncontrolledRating = React.memo(UncontrolledRatingMain)
 
-export function UncontrolledRating(props: UncontrolledRatingPropsType) {
+function UncontrolledRatingMain(props: UncontrolledRatingPropsType) {
 
     let [valueSelected, setStar] = useState(0);
 
@@ -25,7 +26,9 @@ type StarPropsType = {
     onClick: () => void
 }
 
-function Star(props: StarPropsType) {
+const Star = React.memo(StarMain)
+
+function StarMain(props: StarPropsType) {
     return <span onClick={props.onClick}>
         {props.selected ? <b>star </b> : 'star '}
     </span>

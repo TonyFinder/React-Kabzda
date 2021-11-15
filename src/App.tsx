@@ -7,7 +7,9 @@ import {Accordion} from './Accordion/Accordion';
 import UncontrolledOnOff from './UncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './OnOff/OnOff';
 
-function App() {
+const App = React.memo(AppMain)
+
+function AppMain() {
 
     let [valueStar, setValueStar] = useState<RatingValueType>(0)
 
