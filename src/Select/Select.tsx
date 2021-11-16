@@ -3,7 +3,7 @@ import s from './Select.module.css'
 
 type ItemsSelectPropsType = {
     title: string
-    value: any
+    value?: any
 }
 
 export type SelectPropsType = {
@@ -15,7 +15,6 @@ export type SelectPropsType = {
 }
 
 const SelectMain = (props: SelectPropsType) => {
-
     return (
         <div className={s.main}>
             {props.showSelect &&
