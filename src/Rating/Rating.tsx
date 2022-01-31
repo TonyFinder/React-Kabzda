@@ -1,5 +1,4 @@
 import React from 'react';
-import {lookupService} from 'dns';
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 

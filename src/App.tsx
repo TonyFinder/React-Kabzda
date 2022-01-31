@@ -57,12 +57,3 @@ function AppMain() {
 }
 
 export default App;
-
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    return <h1>{props.title}</h1>
-}
-
