@@ -66,37 +66,39 @@ export const UseEffectCounter = () => {
     const [minutes, setMinutes] = useState<string>('58')
     const [seconds, setSeconds] = useState<string>('00')
 
-    useEffect(() => {
-        setInterval(() => {
-            setSeconds(state => {
-                if (Number(state) < 59) {
-                    if (Number(state) > 8) {
-                        return (Number(state) + 1).toString()
-                    } else return `0${(Number(state) + 1).toString()}`
-                } else {
-                    setMinutes(state => {
-                        if (Number(state) < 59) {
-                            if (Number(state) > 8) {
-                                return (Number(state) + 1).toString()
-                            } else return `0${(Number(state) + 1).toString()}`
-                        } else {
-                            setHours(state => {
-                                if (Number(state) < 23) {
-                                    if (Number(state) > 8) {
-                                        return (Number(state) + 1).toString()
-                                    } else return `0${(Number(state) + 1).toString()}`
-                                } else {
-                                    return '00'
-                                }
-                            })
-                            return '00'
-                        }
-                    })
-                    return '00'
-                }
-            })
-        }, 1000)
-    }, [])
+    // This example is generating always
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         console.log("tick")
+    //         setSeconds(state => {
+    //             if (Number(state) < 59) {
+    //                 if (Number(state) > 8) {
+    //                     return (Number(state) + 1).toString()
+    //                 } else return `0${(Number(state) + 1).toString()}`
+    //             } else {
+    //                 setMinutes(state => {
+    //                     if (Number(state) < 59) {
+    //                         if (Number(state) > 8) {
+    //                             return (Number(state) + 1).toString()
+    //                         } else return `0${(Number(state) + 1).toString()}`
+    //                     } else {
+    //                         setHours(state => {
+    //                             if (Number(state) < 23) {
+    //                                 if (Number(state) > 8) {
+    //                                     return (Number(state) + 1).toString()
+    //                                 } else return `0${(Number(state) + 1).toString()}`
+    //                             } else {
+    //                                 return '00'
+    //                             }
+    //                         })
+    //                         return '00'
+    //                     }
+    //                 })
+    //                 return '00'
+    //             }
+    //         })
+    //     }, 1000)
+    // }, [])
 
     return (
         <div>
