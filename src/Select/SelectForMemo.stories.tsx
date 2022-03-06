@@ -31,7 +31,7 @@ export const SelectForMemo1 = () => {
     const citiesOfUSA = useMemo( () => {
         console.log("citiOfUSA changer")
         return valueForSelects.filter(f => f.id === 2).map(m => ({title: m.city}))
-    }, [valueForSelects])
+    }, [])
 
     const changeHandler = (value: string) => {
         setValue(value)
@@ -51,7 +51,7 @@ export const SelectForMemo2 = () => {
     const citiesOfUSA = useMemo( () => {
         console.log("citiOfUSA changer")
         return valueForSelects.map(m => ({title: m.city})).filter(f => f.title.toLowerCase().indexOf("a") > -1)
-    }, [valueForSelects])
+    }, [])
 
     const changeHandler = (value: string) => {
         setValue(value)
@@ -71,7 +71,7 @@ export const SelectForMemo3 = () => {
     const citiesOfUSA = useMemo( () => {
         console.log("citiOfUSA changer")
         return valueForSelects.filter(f => f.population > 500000).map(m => ({title: m.city}))
-    }, [valueForSelects])
+    }, [])
 
     const changeHandler = (value: string) => {
         setValue(value)

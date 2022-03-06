@@ -106,3 +106,44 @@ export const UseEffectCounter = () => {
         </div>
     )
 }
+
+export const ResetEffectExample = () => {
+    const [counter, setCounter] = useState<number>(1)
+    console.log('ResetEffectExample Component rendered ' + counter)
+
+    useEffect(() => {
+        console.log('useEffect is occurred ' + counter)
+
+        return () => console.log('UseEffect is removed ' + counter)
+    }, [counter])
+
+    const increase = () => setCounter(counter + 1)
+
+    return (
+        <div>
+            {counter}
+            <button onClick={increase}>increase +</button>
+        </div>
+    )
+}
+
+export const KeyTrackerExample = () => {
+    const [text, setKey] = useState<string>('')
+    console.log('ResetEffectExample Component rendered ' + text)
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setKey(state => state + e.key)
+        }
+        window.addEventListener('keypress', handler)
+
+        return () => window.removeEventListener('keypress', handler)
+    }, [])
+
+    return (
+        <div>
+            {text}
+        </div>
+    )
+}
