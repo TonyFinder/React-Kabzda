@@ -6,6 +6,7 @@ import {UncontrolledRating} from './UncontrolledRating/UncontrolledRating';
 import {Accordion} from './Accordion/Accordion';
 import UncontrolledOnOff from './UncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './OnOff/OnOff';
+import {Clock} from './Clock/Clock';
 
 const App = React.memo(AppMain)
 
@@ -52,6 +53,7 @@ function AppMain() {
             <UncontrolledAccordion titleValue={"Menu"} />
             <Rating value={valueStar} setValueStar={setValueStar}/>
             <UncontrolledRating />
+            {on && <Clock/>}
         </div>
     );
 }
